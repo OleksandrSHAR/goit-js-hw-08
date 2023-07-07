@@ -24,7 +24,7 @@ function onInputData(e) {
 
 function onFormSubmit(e) {
   e.preventDefault();
-  console.log( e.target.mame,e.target.value );
+  console.log({email:email.value,message:message.value});
 
   if (email.value === '' || message.value === '') {
     return alert('Please fill in all the fields!');
