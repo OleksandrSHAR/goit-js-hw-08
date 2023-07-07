@@ -7,7 +7,7 @@ form.addEventListener('input', throttle(onInputData, 500));
 form.addEventListener('submit', onFormSubmit);
 
 let dataForm = JSON.parse(localStorage.getItem(KEY)) || {};
-
+const { email, message } = form.elements;
 reloadPage();
 
 function onInputData(e) {
@@ -17,7 +17,6 @@ function onInputData(e) {
 
  function reloadPage() {
    if (dataForm) {
-     const { email, message } = form.elements;
      email.value = dataForm.email || '';
     message.value = dataForm.message || '';
    }
