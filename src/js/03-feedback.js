@@ -11,7 +11,7 @@ const { email, message } = form.elements;
 reloadPage();
 
 function onInputData(e) {
-  dataForm[e.target.mame] = e.target.value;
+  dataForm[e.target.name] = e.target.value;
   localStorage.setItem(KEY, JSON.stringify(dataForm));
 }
 
