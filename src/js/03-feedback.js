@@ -16,10 +16,10 @@ function onInputData(e) {
 }
 
  function reloadPage() {
-   if (formData) {
+   if (dataForm) {
      let { email, message } = form.elements;
-     email.value = formData.email || '';
-    message.value = formData.message || '';
+     email.value = dataForm.email || '';
+    message.value = dataForm.message || '';
    }
  }
 
