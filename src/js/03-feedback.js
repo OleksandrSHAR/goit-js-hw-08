@@ -8,12 +8,20 @@ form.addEventListener('submit', onFormSubmit);
 
 let dataForm = JSON.parse(localStorage.getItem(KEY)) || {};
 const { email, message } = form.elements;
- 
+ reloadPage()
 
 function onInputData(e) {
   dataForm = { email: email.value, message: message.value };
   localStorage.setItem(KEY, JSON.stringify(dataForm));
 }
+
+ function reloadPage() {
+   if (formData) {
+     let { email, message } = form.elements;
+     email.value = formData.email || '';
+    message.value = formData.message || '';
+   }
+ }
 
 function onFormSubmit(e) {
   e.preventDefault();
